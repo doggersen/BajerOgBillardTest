@@ -4,11 +4,35 @@ using System.Text;
 
 namespace BajerOgBillardTest
 {
-    public class Player
+    public class Player : BaseViewModel
     {
-        public string Name { get; set; }
-        public int Points { get; set; }
-        
+        //public string Name { get; set; }
+        //public int Points { get; set; }
+
+
+        private string _name;
+        public string Name
+        {
+            get { return _name; }
+            set
+            {
+                _name = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private int _points;
+        public int Points
+        {
+            get { return _points; }
+            set
+            {
+                _points = value;
+                OnPropertyChanged();
+            }
+        }
+
+
         public Player(string name, int points = 60)
         {
             Name = name;
@@ -16,28 +40,6 @@ namespace BajerOgBillardTest
 
         }
 
-
-        //private double _name;
-        //public double Name
-        //{
-        //    get { return _name; }
-        //    set
-        //    {
-        //        _name = value;
-        //        OnPropertyChanged();
-        //    }
-        //}
-
-        //private double _points;
-        //public double Points
-        //{
-        //    get { return _points; }
-        //    set
-        //    {
-        //        _points = value;
-        //        OnPropertyChanged();
-        //    }
-        //}
 
 
 

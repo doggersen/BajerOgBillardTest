@@ -21,6 +21,20 @@
 
 
             <ListView x:Name="lvPlayers" ItemsSource="{Binding Players}" SelectedItem="{Binding SelectedPlayer}" >
+                <ListView.Header>
+                    <Grid >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="7*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Label Text="Player Name" Grid.Column="0" Grid.Row="0"  FontAttributes="Bold" BackgroundColor="LightGray"/>
+                        <Label Text="Points" Grid.Column="2" Grid.Row="0"  FontAttributes="Bold" BackgroundColor="LightGray" />
+                        
+                    </Grid>
+                </ListView.Header>
 
                 <ListView.ItemTemplate>
                     <DataTemplate>

@@ -19,9 +19,12 @@ namespace BajerOgBillardTest
 
         //since we deal with the Player objects, we need this temporary variable to store user-input. 
         //so later, when we need to add player objects to the list, we can add "InputName" (that contains the user input)
+        
         public string InputName { get; set; }
 
+
         public Player SelectedPlayer { get; set; }
+
 
 
         public PlayerListViewModel()
