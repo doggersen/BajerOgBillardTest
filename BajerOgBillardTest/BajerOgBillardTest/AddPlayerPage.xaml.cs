@@ -16,5 +16,10 @@ namespace BajerOgBillardTest
         {
             InitializeComponent();
         }
+
+        private async void btn_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new GamePage());
+        }
     }
 }

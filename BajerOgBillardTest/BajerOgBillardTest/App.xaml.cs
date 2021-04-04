@@ -10,7 +10,9 @@ namespace BajerOgBillardTest
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            //MainPage = new MainPage();
+            MainPage = new NavigationPage(new BajerOgBillardTest.AddPlayerPage());
+         //   MainPage = new BajerOgBillardTest.AddPlayerPage();
         }
 
         protected override void OnStart()

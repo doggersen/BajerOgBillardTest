@@ -1,12 +1,48 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:BajerOgBillardTest"
              x:Class="BajerOgBillardTest.AddPlayerPage">
-    <ContentPage.Content>
+    <!--<ContentPage.Content>
         <StackLayout>
             <Label Text="Welcome to Xamarin.Forms!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
         </StackLayout>
     </ContentPage.Content>
-</ContentPage>
+</ContentPage>-->
+
+    <ContentPage.BindingContext>
+        <local:PlayerListViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Entry Placeholder="Write player name" Text="{Binding InputName}"></Entry>
+
+            <Button Text="Add" Command="{Binding AddPlayerCommand}"></Button>
+            <Button Text="Delete" Command="{Binding DeletePlayerCommand}"></Button>
+            <Button Text="Update" Command="{Binding UpdatePlayerCommand}"></Button>
+
+            <ListView x:Name="lvPlayers" ItemsSource="{Binding Players}" SelectedItem="{Binding SelectedPlayer}" >
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+
+                        <ViewCell>
+
+                            <Label  Text="{Binding Name }" VerticalOptions="Center"  Grid.Column="0"  />
+
+
+
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+               
+            </ListView>
+
+            <Button x:Name="btn" Text="Start the game" Clicked="btn_Clicked"></Button>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>   
