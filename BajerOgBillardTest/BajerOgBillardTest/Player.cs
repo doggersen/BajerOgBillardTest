@@ -32,7 +32,7 @@ namespace BajerOgBillardTest
             }
         }
 
-
+        //this is a constructor, its initiated when u make an object. 
         public Player(string name, int points = 60)
         {
             Name = name;
@@ -40,7 +40,7 @@ namespace BajerOgBillardTest
 
         }
 
-
+        
 
 
     }

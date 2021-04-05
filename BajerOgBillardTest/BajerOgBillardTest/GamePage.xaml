@@ -18,6 +18,9 @@
 
     <ContentPage.Content>
         <StackLayout>
+            <Entry Placeholder="Write player name" Text="{Binding InputName}"></Entry>
+
+            <Button Text="Add" Command="{Binding AddPlayerCommand}"></Button>
 
 
             <ListView x:Name="lvPlayers" ItemsSource="{Binding Players}" SelectedItem="{Binding SelectedPlayer}" >

@@ -19,6 +19,10 @@ namespace BajerOgBillardTest
 
         private async void btn_Clicked(object sender, EventArgs e)
         {
+            Employee employee = ((AddOrEditAdvancedEmployeeViewModel)BindingContext).Employee;
+
+            MessagingCenter.Send(this, "AddOrEditAdvancedEmployee", employee);
+
             await Navigation.PushAsync(new GamePage());
         }
     }
