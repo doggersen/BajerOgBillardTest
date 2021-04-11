@@ -1,26 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:BajerOgBillardTest"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:BajerOgBillardTest"
              x:Class="BajerOgBillardTest.GamePage">
     <!--<ContentPage.Content>
         <StackLayout>
             <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
+                VerticalOptions="CenterAndExpand"
                 HorizontalOptions="CenterAndExpand" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>-->
 
-
     <ContentPage.BindingContext>
-        <local:PlayerListViewModel/>
+        <local:PlayerListViewModel />
     </ContentPage.BindingContext>
 
     <ContentPage.Content>
         <StackLayout>
 
-
-            <ListView x:Name="lvPlayers" ItemsSource="{Binding Players}" SelectedItem="{Binding SelectedPlayer}" >
+            <ListView x:Name="lvPlayers" ItemsSource="{Binding Players}" SelectedItem="{Binding SelectedPlayer}">
 
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -29,8 +28,8 @@
 
                             <Grid>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="7*"/>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="7*" />
                                 </Grid.ColumnDefinitions>
 
                                 <!--<Image Source="{Binding PictureUrl}" Grid.Column="0"></Image>
@@ -39,7 +38,6 @@
                                    FontAttributes="Bold"
                                    Grid.Column="1"
                                        VerticalTextAlignment="Start">
-
                                 </Label>
 
                                 <Label Text="{Binding Designation}" Grid.Column="1" VerticalTextAlignment="End"></Label>
@@ -47,21 +45,12 @@
                                 <Image Source="edit.png" Grid.Column="2"></Image>
 
                                 <Image Source="trash.png" Grid.Column="3"></Image>-->
-                                <Label  Text="{Binding Name }" Grid.Column="0"  />
-                                <Label  Text="{Binding Points }" Grid.Column="2"  />
-
-
-
+                                <Label  Text="{Binding Name }" Grid.Column="0" />
+                                <Label  Text="{Binding Points }" Grid.Column="2" />
                             </Grid>
-
-
-
-
-
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-
             </ListView>
         </StackLayout>
     </ContentPage.Content>
