@@ -1,16 +1,38 @@
 ﻿using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace BajerOgBillardTest
 {
-    internal class PlayerListViewModel
+    internal class PlayerListViewModel : INotifyPropertyChanged
     {
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void OnPropertyChanged([CallerMemberName] string Name = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(Name));
+        }
+
+
         public ICommand AddPlayerCommand => new Command(AddPlayer);
         public ICommand DeletePlayerCommand => new Command(DeletePlayer);
         public ICommand UpdatePlayerCommand => new Command(UpdatePlayer);
 
-        public ObservableCollection<Player> Players { get; set; }
+       // public ObservableCollection<Player> Players { get; set; }
+
+        private ObservableCollection<Player> _players { get; set; }
+        public ObservableCollection<Player> Players
+        {
+            get { return _players; }
+            set
+            {
+                _players = value;
+                OnPropertyChanged();
+            }
+        }
 
         //since we deal with the Player objects, we need this temporary variable to store user-input.
         //so later, when we need to add player objects to the list, we can add "InputName" (that contains the user input)
@@ -27,6 +49,8 @@ namespace BajerOgBillardTest
             Players.Add(new Player("Cherryl"));
             Players.Add(new Player("Martin"));
         }
+
+        
 
         public void AddPlayer()
         {

@@ -5,7 +5,7 @@ using Xamarin.Forms;
 namespace BajerOgBillardTest
 {
     internal class AddPlayerViewModel
-    {
+    {/*
         public Player Player { get; set; }
 
         //public AddPlayerViewModel()
@@ -92,6 +92,6 @@ namespace BajerOgBillardTest
             int oldIndex = Players.IndexOf(test);
 
             Players.Move(oldIndex, newIndex);
-        }
-    }
+        } */
+    } 
 }
