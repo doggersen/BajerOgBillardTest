@@ -38,7 +38,7 @@
                 </ListView.ItemTemplate>
             </ListView>
 
-            <Button x:Name="btn" Text="Start the game" Clicked="btn_Clicked"></Button>
+            <Button x:Name="btn" Text="Gem" Clicked="btn_Clicked"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>   
