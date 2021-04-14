@@ -51,7 +51,8 @@
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-            </ListView>
+              </ListView>
+            <Button Text="skæve eller gode" Clicked="Button_Clicked_1"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage> 

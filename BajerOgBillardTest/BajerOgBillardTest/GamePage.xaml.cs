@@ -21,5 +21,17 @@ namespace BajerOgBillardTest
         {
             Navigation.PushAsync(new AddPlayerPage());
         }
+
+        private async void Button_Clicked_1(object sender, EventArgs e)
+        {
+            string GoodOrBad = await DisplayActionSheet("vælg skæve eller gode", "cancel", "destruction",
+                "skæve", "gode");
+
+            if (GoodOrBad == "skæve")
+            {
+                PlayerListViewModel playerListViewModel = new PlayerListViewModel();
+                playerListViewModel.SelectedPlayer.Points = 10;
+            }
+        }
     }
 }
