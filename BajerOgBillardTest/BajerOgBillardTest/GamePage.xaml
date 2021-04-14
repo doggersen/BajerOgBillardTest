@@ -18,7 +18,7 @@
 
     <ContentPage.Content>
         <StackLayout>
-
+            <Button Text="Add Player" Clicked="Button_Clicked"></Button>
             <ListView x:Name="lvPlayers" ItemsSource="{Binding Players}" SelectedItem="{Binding SelectedPlayer}">
 
                 <ListView.ItemTemplate>

@@ -11,7 +11,7 @@ namespace BajerOgBillardTest
             InitializeComponent();
 
             //MainPage = new MainPage();
-            MainPage = new NavigationPage(new BajerOgBillardTest.AddPlayerPage());
+            MainPage = new NavigationPage(new BajerOgBillardTest.GamePage());
          //   MainPage = new BajerOgBillardTest.AddPlayerPage();
         }
 

@@ -13,32 +13,16 @@
 </ContentPage>-->
 
     <ContentPage.BindingContext>
-        <local:PlayerListViewModel />
+        <local:AddPlayerViewModel />
     </ContentPage.BindingContext>
 
     <ContentPage.Content>
         <StackLayout>
 
-            <Entry Placeholder="Write player name" Text="{Binding InputName}"></Entry>
+            <Entry Placeholder="Write player name" Text="{Binding Player.Name }"></Entry>
+           
 
-            <Button Text="Add" Command="{Binding AddPlayerCommand}"></Button>
-            <Button Text="Delete" Command="{Binding DeletePlayerCommand}"></Button>
-            <Button Text="Update" Command="{Binding UpdatePlayerCommand}"></Button>
-
-            <ListView x:Name="lvPlayers" ItemsSource="{Binding Players}" SelectedItem="{Binding SelectedPlayer}">
-
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-
-                        <ViewCell>
-
-                            <Label  Text="{Binding Name }" VerticalOptions="Center"  Grid.Column="0" />
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-
-            <Button x:Name="btn" Text="Gem" Clicked="btn_Clicked"></Button>
+            <Button Text="Gem" Clicked="btn_Clicked"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>   

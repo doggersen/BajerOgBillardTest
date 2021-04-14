@@ -17,13 +17,16 @@ namespace BajerOgBillardTest
             InitializeComponent();
         }
 
-        private async void btn_Clicked(object sender, EventArgs e)
+        private void btn_Clicked(object sender, EventArgs e)
         {
-            Employee employee = ((AddOrEditAdvancedEmployeeViewModel)BindingContext).Employee;
+            //making a variable called "employee" of type "Employee", and assigning it ....to what exactly?
+             Player player = ((AddPlayerViewModel)BindingContext).Player;
+     
+            MessagingCenter.Send(this, "AddPlayer", player);
 
-            MessagingCenter.Send(this, "AddOrEditAdvancedEmployee", employee);
+            Navigation.PopAsync();
 
-            await Navigation.PushAsync(new GamePage());
+           
         }
     }
 }
