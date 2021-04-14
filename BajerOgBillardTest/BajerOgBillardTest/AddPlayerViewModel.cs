@@ -11,6 +11,8 @@ namespace BajerOgBillardTest
         public AddPlayerViewModel()
         {
             Player = new Player();
+            //linjen tilføjet af mig, uden den, sætter den scoren til 0 på spilleren man lige har tilføjet. 
+            Player.Points = 60;
         }
     } 
 }
